@@ -1,0 +1,107 @@
+/* Global Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Base Styles */
+html,
+body,
+[class*="css"] {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hide default decoration */
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+header {
+    visibility: hidden;
+}
+
+/* Custom Gradient Background for Header/Hero Sections */
+.hero-container {
+    padding: 2rem;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Card Styling for Inputs and Results */
+.custom-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+    margin-bottom: 1rem;
+}
+
+/* Dark mode adjustment for cards (Streamlit auto-handles dark mode for main classes, 
+   but specific white bg needs override if we want it to adapt, 
+   or we use transparent/mixed colors. 
+   Here we use a variable approach or specific dark-mode media query usually, 
+   but Streamlit's iframe makes media queries tricky. 
+   We will rely on Streamlit's theme config mostly, but add a class for containers.) */
+
+[data-testid="stAppViewContainer"] {
+    /* Optional: Global background tweak if needed */
+}
+
+/* Navigation Customization - Dark Sidebar for Premium Look */
+[data-testid="stSidebar"] {
+    background-color: #0f172a;
+    /* Slate 900 */
+    border-right: 1px solid #1e293b;
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] div[data-baseweb="radio"] div {
+    color: #f8fafc !important;
+    /* Slate 50 */
+}
+
+/* Fix for Streamlit Radio Buttons in Sidebar */
+[data-testid="stSidebar"] [data-baseweb="radio"] {
+    color: white;
+}
+
+
+/* KPI / Metric Cards */
+.kpi-card {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.kpi-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.kpi-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
